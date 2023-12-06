@@ -19,7 +19,7 @@ public class Inventory : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast((Vector2)mousePosition, Vector2.zero);
 
-            if (hit.collider != null)
+            if (hit.collider != null && hit.collider.GetComponent<Collectable>() != null)
             {
                 int EmptyPlace = -1;
                 GameObject obj = hit.collider.gameObject;
@@ -51,7 +51,25 @@ public class Inventory : MonoBehaviour
                     Debug.Log("Not enough place in Inventory !");
                 }
             }
+        }
+    }
 
+    public void Drag(int index)
+    {
+        if (!ObjectsInInventory[index].activeInHierarchy)
+        {
+            ObjectsInInventory[index].SetActive(true);
+        }
+
+        var pos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+        ObjectsInInventory[index].transform.position = pos;
+    }
+
+    public void Drop(int index)
+    {
+        if (ObjectsInInventory[index].activeInHierarchy)
+        {
+            ObjectsInInventory[index].SetActive(false);
         }
     }
 }
