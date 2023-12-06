@@ -2,25 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerMove : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public Transform transformChild;
+    public UnityEngine.Transform transformChild;
     public Vector2 followSpot;
     public float speed;
 
     private void Start()
     {
-        transformChild.rotation = Quaternion.Euler(new Vector3(90,0,0));
+        transformChild.rotation = Quaternion.Euler(new Vector3(90, 0, 0));
     }
 
     private void Update()
     {
-        MouseDown();
+        MouseDownDestination();
     }
 
-    void MouseDown()
+    void MouseDownDestination()
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
