@@ -19,15 +19,31 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         MouseDownDestination();
+        MeshRotation();
     }
 
     void MouseDownDestination()
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0))
+        RaycastHit2D hit = Physics2D.Raycast((Vector2)mousePosition, Vector2.zero);
+
+        if (Input.GetMouseButtonDown(0)/* && hit.collider != null*/)
         {
             followSpot = new Vector2(mousePosition.x, mousePosition.y);
         }
+
         agent.SetDestination(Vector2.MoveTowards(transform.position, followSpot, Time.deltaTime * speed));
+    }
+
+    void MeshRotation()
+    {
+        if (agent.velocity.x < 0)
+        {
+            transformChild.localScale = new Vector3(-1, transformChild.localScale.y, transformChild.localScale.z);
+        }
+        else if (agent.velocity.x > 0)
+        {
+            transformChild.localScale = new Vector3(1, transformChild.localScale.y, transformChild.localScale.z);
+        }
     }
 }

@@ -8,6 +8,11 @@ public class Ui : MonoBehaviour
     public GameObject Onglet;
     public Image[] Image;
 
+    private void Start()
+    {
+        Onglet.SetActive(false);
+    }
+
     public void AffObjectUi(GameObject[] obj, Image[] im)
     {
         for (int i = 0; i < obj.Length; i++)
@@ -15,6 +20,7 @@ public class Ui : MonoBehaviour
             if (obj[i] != null)
             {
                 im[i].sprite = obj[i].GetComponent<SpriteRenderer>().sprite;
+                Onglet.SetActive(true);
             }
         }
     }

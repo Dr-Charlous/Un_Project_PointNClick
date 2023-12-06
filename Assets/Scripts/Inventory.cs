@@ -23,7 +23,6 @@ public class Inventory : MonoBehaviour
             {
                 int EmptyPlace = -1;
                 GameObject obj = hit.collider.gameObject;
-                Debug.Log(obj.name);
 
                 for (int i = 0; i < ObjectsInInventory.Length; i++)
                 {
@@ -56,18 +55,21 @@ public class Inventory : MonoBehaviour
 
     public void Drag(int index)
     {
-        if (!ObjectsInInventory[index].activeInHierarchy)
+        if (ObjectsInInventory[index] != null) 
         {
-            ObjectsInInventory[index].SetActive(true);
-        }
+            if (!ObjectsInInventory[index].activeInHierarchy)
+            {
+                ObjectsInInventory[index].SetActive(true);
+            }
 
-        var pos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
-        ObjectsInInventory[index].transform.position = pos;
+            var pos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+            ObjectsInInventory[index].transform.position = pos;
+        }
     }
 
     public void Drop(int index)
     {
-        if (ObjectsInInventory[index].activeInHierarchy)
+        if (ObjectsInInventory[index] != null)
         {
             ObjectsInInventory[index].SetActive(false);
         }
