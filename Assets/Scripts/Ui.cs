@@ -19,7 +19,8 @@ public class Ui : MonoBehaviour
         {
             if (obj[i] != null)
             {
-                im[i].sprite = obj[i].GetComponent<SpriteRenderer>().sprite;
+                im[i].sprite = obj[i].GetComponent<Image>().sprite;
+                im[i].color = obj[i].GetComponent<Image>().color;
                 Onglet.SetActive(true);
             }
         }

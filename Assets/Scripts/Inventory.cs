@@ -6,6 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public Ui Ui;
     public GameObject[] ObjectsInInventory;
+    public GameObject ObjectDrag;
 
     private void Update()
     {
@@ -26,9 +27,11 @@ public class Inventory : MonoBehaviour
 
                 for (int i = 0; i < ObjectsInInventory.Length; i++)
                 {
-                    if (ObjectsInInventory[i] == hit.collider.gameObject)
+                    if (ObjectsInInventory[i] == obj.GetComponent<Collectable>().UiVersionPrefab)
                     {
+                        Debug.Log($"{obj.name} is already in Inventory !");
                         obj = null;
+                        break;
                     }
 
                     if (ObjectsInInventory[i] == null && EmptyPlace == -1)
@@ -39,7 +42,7 @@ public class Inventory : MonoBehaviour
 
                 if (obj != null && EmptyPlace != -1)
                 {
-                    ObjectsInInventory[EmptyPlace] = obj;
+                    ObjectsInInventory[EmptyPlace] = obj.GetComponent<Collectable>().UiVersionPrefab;
                     obj.SetActive(false);
 
                     Debug.Log($"{obj.name} go in Inventory !");
@@ -57,13 +60,14 @@ public class Inventory : MonoBehaviour
     {
         if (ObjectsInInventory[index] != null) 
         {
-            if (!ObjectsInInventory[index].activeInHierarchy)
+            var pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+            
+            if (!ObjectsInInventory[index].activeInHierarchy && ObjectDrag == null)
             {
-                ObjectsInInventory[index].SetActive(true);
+                ObjectDrag = Instantiate(ObjectsInInventory[index], pos, Quaternion.identity, this.gameObject.transform);
             }
 
-            var pos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
-            ObjectsInInventory[index].transform.position = pos;
+            ObjectDrag.transform.position = pos;
         }
     }
 
@@ -71,7 +75,8 @@ public class Inventory : MonoBehaviour
     {
         if (ObjectsInInventory[index] != null)
         {
-            ObjectsInInventory[index].SetActive(false);
+            Destroy(ObjectDrag);
+            ObjectDrag = null;
         }
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4263196502818196806}
   - component: {fileID: 937947857995867117}
   m_Layer: 0
-  m_Name: Framboise
+  m_Name: Framboise blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4380874490310385519
 SpriteRenderer:
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 272a9b629b7d57347ad921e0935cf11e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.1764706, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -143,3 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d0fefb68a27a54896568f1025c3813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UiVersionPrefab: {fileID: 5271853427108274043, guid: e1e19ed56701373458f2f49e8e23afad,
+    type: 3}
