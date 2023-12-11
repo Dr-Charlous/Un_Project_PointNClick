@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class ObjectActionWithCollectable : MonoBehaviour
 {
+    public Inventory inventory;
     public CollectableUIScriptableObject Door;
     public SceneAsset SceneActiveObject;
-    public Inventory inventory;
+    public SceneAsset SceneDestination;
 
     public void Action(CollectableUIScriptableObject key, int index, string scene)
     {
@@ -19,10 +20,16 @@ public class ObjectActionWithCollectable : MonoBehaviour
 
             inventory.ObjectsInInventory[index] = null;
             inventory.Ui.AffObjectUi(inventory.ObjectsInInventory, inventory.Ui.Image);
+            GoToScene(SceneDestination);
         }
         else
         {
             Debug.Log("Non");
         }
+    }
+
+    public void GoToScene(SceneAsset scene)
+    {
+        SceneManager.LoadScene(scene.name);
     }
 }

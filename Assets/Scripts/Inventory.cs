@@ -11,6 +11,10 @@ public class Inventory : MonoBehaviour
 {
     public Ui Ui;
     public PlayerMove PlayerMoveCode;
+
+    public GameObject Interogation;
+    public GameObject Exclamation;
+
     public CollectableUIScriptableObject[] ObjectsInInventory;
     public GameObject ObjectDragUi;
 
@@ -21,6 +25,12 @@ public class Inventory : MonoBehaviour
 
     public float ValueDistanceObject = 3.5f;
     public float ValueDistanceDoor = 7.5f;
+
+    private void Start()
+    {
+        Interogation.SetActive(false);
+        Exclamation.SetActive(false);
+    }
 
     private void Update()
     {
@@ -39,6 +49,12 @@ public class Inventory : MonoBehaviour
             if (hit.collider != null && hit.collider.GetComponent<Collectable>() != null)
             {
                 _objectCollect = hit.collider.gameObject;
+
+                StartCoroutine(AffExpressions(Exclamation, 1));
+            }
+            else if (hit.collider != null && hit.collider.GetComponent<ObjectActionWithCollectable>() != null)
+            {
+                StartCoroutine(AffExpressions(Interogation, 1));
             }
         }
     }
@@ -71,6 +87,12 @@ public class Inventory : MonoBehaviour
             _doorUse = hit.collider.GetComponent<ObjectActionWithCollectable>();
             _objectUse = ObjectsInInventory[index];
             _objectUseIndex = index;
+
+            StartCoroutine(AffExpressions(Exclamation, 1));
+        }
+        else if (hit.collider != null && hit.collider.GetComponent<ObjectActionWithCollectable>() != null)
+        {
+            StartCoroutine(AffExpressions(Interogation, 1));
         }
 
         ObjectDragUi.SetActive(false);
@@ -123,5 +145,12 @@ public class Inventory : MonoBehaviour
             _objectUse = null;
             _objectUseIndex = -1;
         }
+    }
+
+    public IEnumerator AffExpressions(GameObject obj, int time)
+    {
+        obj.SetActive(true);
+        yield return new WaitForSeconds(time);
+        obj.SetActive(false);
     }
 }
