@@ -13,14 +13,14 @@ public class Ui : MonoBehaviour
         Onglet.SetActive(false);
     }
 
-    public void AffObjectUi(GameObject[] obj, Image[] im)
+    public void AffObjectUi(CollectableUIScriptableObject[] obj, Image[] im)
     {
         for (int i = 0; i < obj.Length; i++)
         {
             if (obj[i] != null)
             {
-                im[i].sprite = obj[i].GetComponent<Image>().sprite;
-                im[i].color = obj[i].GetComponent<Image>().color;
+                im[i].sprite = obj[i].sprite;
+                im[i].color = obj[i].color;
                 Onglet.SetActive(true);
             }
         }
