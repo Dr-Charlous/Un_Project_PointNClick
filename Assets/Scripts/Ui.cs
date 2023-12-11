@@ -23,6 +23,11 @@ public class Ui : MonoBehaviour
                 im[i].color = obj[i].color;
                 Onglet.SetActive(true);
             }
+            else
+            {
+                im[i].sprite = null;
+                im[i].color = Color.white;
+            }
         }
     }
 
