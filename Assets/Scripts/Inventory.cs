@@ -26,6 +26,9 @@ public class Inventory : MonoBehaviour
     public float ValueDistanceObject = 3.5f;
     public float ValueDistanceDoor = 7.5f;
 
+    public float Intensity = 1f;
+    public float Duration = 4f;
+
     private void Start()
     {
         Interogation.SetActive(false);
@@ -144,6 +147,8 @@ public class Inventory : MonoBehaviour
             _doorUse = null;
             _objectUse = null;
             _objectUseIndex = -1;
+
+            //StartCoroutine(Ui.ScreenShake(Intensity, Duration));
         }
     }
 

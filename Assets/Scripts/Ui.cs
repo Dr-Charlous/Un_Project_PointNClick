@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,5 +35,25 @@ public class Ui : MonoBehaviour
     public void UiAff()
     {
         Onglet.SetActive(!Onglet.activeSelf);
+    }
+
+    public IEnumerator ScreenShake(float intensity, float duration)
+    {
+        Vector3 origin = Camera.main.transform.position;
+
+        Debug.Log("ScreenShake");
+
+        for(float i = 0;i < duration * 0.01f;i+=Time.deltaTime)
+        {
+            Vector2 transfert = new Vector2(Random.Range(-intensity, intensity), Random.Range(-intensity, intensity));
+
+            Camera.main.transform.DOKill();
+            Camera.main.transform.DOMove(origin + (Vector3)transfert, 10 * Time.deltaTime);
+
+            yield return new WaitForSeconds(duration * Time.deltaTime);
+        }
+
+        Camera.main.transform.DOKill();
+        Camera.main.transform.DOMove(origin, 10 * Time.deltaTime);
     }
 }
