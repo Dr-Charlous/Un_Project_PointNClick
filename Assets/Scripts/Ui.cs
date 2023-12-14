@@ -11,6 +11,7 @@ public class Ui : MonoBehaviour
     public Image[] Image;
 
     private bool _isUiActive = false;
+    private bool _isUiActiveCollect = false;
 
     private void Start()
     {
@@ -21,6 +22,16 @@ public class Ui : MonoBehaviour
     {
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+        if (_isUiActiveCollect == false)
+        {
+            InventoryAffTouch(mousePos);
+        }
+
+        Onglet.SetActive(_isUiActive);
+    }
+
+    private void InventoryAffTouch(Vector3 mousePos)
+    {
         if ((mousePos.x >= -1 + transform.position.x && mousePos.x <= 1 + transform.position.x) && (mousePos.y <= 1 + transform.position.y && mousePos.y >= -1 + transform.position.y) && _isUiActive == false)
         {
             _isUiActive = true;
@@ -33,12 +44,12 @@ public class Ui : MonoBehaviour
         {
             _isUiActive = false;
         }
-
-        Onglet.SetActive(_isUiActive);
     }
 
     public void AffObjectUi(CollectableUIScriptableObject[] obj, Image[] im)
     {
+        StartCoroutine(AffInventoryCollect(2f));
+
         for (int i = 0; i < obj.Length; i++)
         {
             if (obj[i] != null)
@@ -53,6 +64,14 @@ public class Ui : MonoBehaviour
                 im[i].color = ColorNotUsing;
             }
         }
+    }
+
+    IEnumerator AffInventoryCollect(float time)
+    {
+        _isUiActive = true;
+        _isUiActiveCollect = true;
+        yield return new WaitForSeconds(time);
+        _isUiActiveCollect = false;
     }
 
     public IEnumerator ScreenShake(float intensity, float duration)
