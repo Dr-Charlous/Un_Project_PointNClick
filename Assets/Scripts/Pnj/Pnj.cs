@@ -12,6 +12,8 @@ public class Pnj : MonoBehaviour
     public ScriptableDialog Dialog;
     public BoxCollider2D Collider2D;
 
+    public AudioSource AudioSource;
+
     private int _currentText = 0;
 
     private void Update()
@@ -37,9 +39,15 @@ public class Pnj : MonoBehaviour
     {
         if (_currentText < Dialog.Dialogs.Length)
         {
-            if (Dialog.Dialogs[_currentText].SpriteCharacter != null)
+            if (Dialog.Dialogs[_currentText].Character != null)
             {
-                ImageCharacter.sprite = Dialog.Dialogs[_currentText].SpriteCharacter;
+                ImageCharacter.sprite = Dialog.Dialogs[_currentText].Character.SpriteCharacter;
+
+                if (Dialog.Dialogs[_currentText].Character.Sounds.Length != 0)
+                {
+                    AudioSource.clip = Dialog.Speak(Dialog.Dialogs[_currentText].Character);
+                    AudioSource.Play();
+                }
             }
             if (Dialog.Dialogs[_currentText].DialogLine != null)
             {

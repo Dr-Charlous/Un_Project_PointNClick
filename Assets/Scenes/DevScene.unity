@@ -1542,16 +1542,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9023203922974190479, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
-        type: 3}
-      propertyPath: Duration
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9023203922974190479, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
-        type: 3}
-      propertyPath: Intensity
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1587,7 +1577,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2716396454556237543}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3c9689f45740aaa419b282a4bcbcf02e, type: 2}
   m_CullingMode: 0

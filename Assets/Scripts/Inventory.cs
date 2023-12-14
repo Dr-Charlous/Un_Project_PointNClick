@@ -18,16 +18,19 @@ public class Inventory : MonoBehaviour
     public CollectableUIScriptableObject[] ObjectsInInventory;
     public GameObject ObjectDragUi;
 
+    public float ValueDistanceObject = 3.5f;
+    public float ValueDistanceDoor = 7.5f;
+
+    [Header("ScreenShake N Anims : ")]
+    public float Intensity = 1f;
+    public float Duration = 4f;
+
+    public Animator Animator;
+
     private GameObject _objectCollect;
     private CollectableUIScriptableObject _objectUse;
     private ObjectActionWithCollectable _doorUse;
     private int _objectUseIndex = -1;
-
-    public float ValueDistanceObject = 3.5f;
-    public float ValueDistanceDoor = 7.5f;
-
-    public float Intensity = 1f;
-    public float Duration = 4f;
 
     private void Start()
     {
@@ -144,12 +147,14 @@ public class Inventory : MonoBehaviour
 
         if (Vector3.Distance(PlayerMoveCode.gameObject.transform.position, doorUse.transform.position) < value)
         {
-            doorUse.Action(ObjectsInInventory[index], index, SceneManager.GetActiveScene().name);
+            StartCoroutine(ChangeScene(2, doorUse, index));
+
             _doorUse = null;
             _objectUse = null;
             _objectUseIndex = -1;
 
-            //StartCoroutine(Ui.ScreenShake(Intensity, Duration));
+            StartCoroutine(Ui.ScreenShake(Intensity, Duration));
+            Animator.SetTrigger("Closing");
         }
     }
 
@@ -158,5 +163,11 @@ public class Inventory : MonoBehaviour
         obj.SetActive(true);
         yield return new WaitForSeconds(time);
         obj.SetActive(false);
+    }
+
+    public IEnumerator ChangeScene(float time, ObjectActionWithCollectable doorUse, int index)
+    {
+        yield return new WaitForSeconds(1);
+        doorUse.Action(ObjectsInInventory[index], index, SceneManager.GetActiveScene().name);
     }
 }

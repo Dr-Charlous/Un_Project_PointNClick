@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Dialog1
   m_EditorClassIdentifier: 
   Dialogs:
-  - SpriteCharacter: {fileID: 21300000, guid: 1decef925a8325d4888b9404f1f61c15, type: 3}
+  - Character: {fileID: 11400000, guid: ebeae124a08dc64428396377dc558c79, type: 2}
     DialogLine: 'Qu''est ce que tu fais ici toi ? '
-  - SpriteCharacter: {fileID: 21300000, guid: 89bb90b6f564ef740a621e622d2a30e9, type: 3}
+  - Character: {fileID: 11400000, guid: 86084142af7e2c846a7ba9557818af61, type: 2}
     DialogLine: Miaou !!!
-  - SpriteCharacter: {fileID: 21300000, guid: 1decef925a8325d4888b9404f1f61c15, type: 3}
+  - Character: {fileID: 11400000, guid: ebeae124a08dc64428396377dc558c79, type: 2}
     DialogLine: "Ah ! Va-t-en m\xE9chant chat !!!"
