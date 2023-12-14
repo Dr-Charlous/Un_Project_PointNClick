@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Character", menuName = "ScriptableObjects/SpawnManagerScriptableCharacter", order = 1)]
+[CreateAssetMenu(fileName = "Character", menuName = "ScriptableObjects/ScriptableCharacter", order = 1)]
 public class Characters : ScriptableObject
 {
     public string Name;
@@ -18,7 +18,7 @@ public class DialogBox
     public string DialogLine;
 }
 
-[CreateAssetMenu(fileName = "Dialog", menuName = "ScriptableObjects/SpawnManagerScriptableDialog", order = 1)]
+[CreateAssetMenu(fileName = "Dialog", menuName = "ScriptableObjects/ScriptableDialog", order = 1)]
 public class ScriptableDialog : ScriptableObject
 {
     public DialogBox[] Dialogs;

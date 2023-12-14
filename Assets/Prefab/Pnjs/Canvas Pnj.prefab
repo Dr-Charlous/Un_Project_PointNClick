@@ -56,6 +56,7 @@ MonoBehaviour:
   TextComponent: {fileID: 2966873113674138816}
   Dialog: {fileID: 11400000, guid: 856fddd52ee717d47b1206a954c45673, type: 2}
   Collider2D: {fileID: 236137560028825653}
+  DilaogAff: {fileID: 7833106258018370708}
   AudioSource: {fileID: 321998938239592494}
 --- !u!61 &236137560028825653
 BoxCollider2D:

@@ -36,6 +36,9 @@ public class Inventory : MonoBehaviour
     {
         Interogation.SetActive(false);
         Exclamation.SetActive(false);
+        ObjectDragUi.SetActive(false);
+
+        Animator.gameObject.SetActive(true);
     }
 
     private void Update()
