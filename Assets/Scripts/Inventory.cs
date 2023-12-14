@@ -66,7 +66,8 @@ public class Inventory : MonoBehaviour
     {
         if (ObjectsInInventory[index] != null)
         {
-            var pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var pos = new Vector3(mousePos.x, mousePos.y, 0);
 
             if (!ObjectDragUi.activeInHierarchy)
             {
