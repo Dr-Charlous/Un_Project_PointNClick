@@ -7,11 +7,34 @@ using UnityEngine.UI;
 public class Ui : MonoBehaviour
 {
     public GameObject Onglet;
+    public Color ColorNotUsing;
     public Image[] Image;
+
+    private bool _isUiActive = false;
 
     private void Start()
     {
         Onglet.SetActive(false);
+    }
+
+    private void Update()
+    {
+        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if ((mousePos.x >= -1 + transform.position.x && mousePos.x <= 1 + transform.position.x) && (mousePos.y <= 1 + transform.position.y && mousePos.y >= -1 + transform.position.y) && _isUiActive == false)
+        {
+            _isUiActive = true;
+        }
+        else if ((mousePos.x >= -1 + transform.position.x && mousePos.x <= 1 + transform.position.x) && (mousePos.y <= 1 + transform.position.y && mousePos.y >= -7 + transform.position.y) && _isUiActive)
+        {
+            _isUiActive = true;
+        }
+        else
+        {
+            _isUiActive = false;
+        }
+
+        Onglet.SetActive(_isUiActive);
     }
 
     public void AffObjectUi(CollectableUIScriptableObject[] obj, Image[] im)
@@ -27,14 +50,9 @@ public class Ui : MonoBehaviour
             else
             {
                 im[i].sprite = null;
-                im[i].color = Color.white;
+                im[i].color = ColorNotUsing;
             }
         }
-    }
-
-    public void UiAff()
-    {
-        Onglet.SetActive(!Onglet.activeSelf);
     }
 
     public IEnumerator ScreenShake(float intensity, float duration)
@@ -43,7 +61,7 @@ public class Ui : MonoBehaviour
 
         Debug.Log("ScreenShake");
 
-        for(float i = 0;i < duration * 0.01f;i+=Time.deltaTime)
+        for (float i = 0; i < duration * 0.01f; i += Time.deltaTime)
         {
             Vector2 transfert = new Vector2(Random.Range(-intensity, intensity), Random.Range(-intensity, intensity));
 

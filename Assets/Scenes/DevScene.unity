@@ -1282,6 +1282,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1364975565277255021, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.078431375
+      objectReference: {fileID: 0}
     - target: {fileID: 1775107029808967165, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
       propertyPath: m_IsActive
@@ -1322,6 +1327,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3963095448165802983, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.078431375
+      objectReference: {fileID: 0}
     - target: {fileID: 3971372354649924327, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
       propertyPath: m_IsActive
@@ -1337,10 +1347,20 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 4379367517133861108, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.078431375
+      objectReference: {fileID: 0}
     - target: {fileID: 4490207057833362444, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790821462476696511, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.078431375
       objectReference: {fileID: 0}
     - target: {fileID: 5500110549415070086, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
@@ -1366,6 +1386,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807476285049054162, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.078431375
       objectReference: {fileID: 0}
     - target: {fileID: 5949420320217395575, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
@@ -1547,7 +1572,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 950080311244210403, guid: e1d365aa5b2a59f49baf9a7026dd19ab, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
