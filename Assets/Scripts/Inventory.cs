@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using System;
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
+using static UnityEditor.PlayerSettings;
 
 public class Inventory : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class Inventory : MonoBehaviour
     private GameObject _objectCollect;
     private CollectableUIScriptableObject _objectUse;
     private ObjectActionWithCollectable _doorUse;
+    private int _objectIndex = -1;
     private int _objectUseIndex = -1;
 
     private void Start()
@@ -46,6 +48,19 @@ public class Inventory : MonoBehaviour
         MouseDown();
         GetObjectPlayer(ValueDistanceObject);
         UseObjectPlayer(ValueDistanceDoor, _objectUse, _doorUse, _objectUseIndex);
+
+        if (_objectIndex != -1 )
+        {
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var pos = new Vector3(mousePos.x, mousePos.y, 0);
+
+            ObjectDragUi.transform.position = pos;
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                Drop(_objectIndex);
+            }
+        }
     }
 
     void MouseDown()
@@ -82,7 +97,7 @@ public class Inventory : MonoBehaviour
                 ObjectDragUi.GetComponent<Image>().color = ObjectsInInventory[index].color;
             }
 
-            ObjectDragUi.transform.position = pos;
+            _objectIndex = index;
         }
     }
 
@@ -105,6 +120,7 @@ public class Inventory : MonoBehaviour
             StartCoroutine(AffExpressions(Interogation, 1));
         }
 
+        _objectIndex = -1;
         ObjectDragUi.SetActive(false);
     }
 

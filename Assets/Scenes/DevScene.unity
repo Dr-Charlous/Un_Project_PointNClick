@@ -1292,6 +1292,36 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2236376469320689423, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: Onglet
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236376469320689423, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: Image.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236376469320689423, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: Image.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236376469320689423, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: Image.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236376469320689423, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: Image.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236376469320689423, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: Image.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2274300748308134380, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
       propertyPath: m_IsActive
@@ -1571,6 +1601,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809682229485174728, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: ObjectDragUi
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 950080311244210403, guid: e1d365aa5b2a59f49baf9a7026dd19ab, type: 3}
