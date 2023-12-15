@@ -270,7 +270,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.825
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 1031536845}
   - component: {fileID: 1031536844}
   m_Layer: 6
-  m_Name: Square
+  m_Name: ShockWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -801,9 +801,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031536843}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5, y: 1.7, z: 0.78}
-  m_LocalScale: {x: 4.4735312, y: 4.4735312, z: 4.4735312}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -5.29, y: 1.85, z: 0.78}
+  m_LocalScale: {x: 2.6528451, y: 2.6528451, z: 2.6528451}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
@@ -1647,6 +1647,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2236376469320689423, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1488488184, guid: 529197e5245ea6a4a9ee7e871b0dde5a,
+        type: 3}
+    - target: {fileID: 2236376469320689423, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236376469320689423, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
       propertyPath: Image.Array.data[0]
       value: 
       objectReference: {fileID: 0}
@@ -1676,6 +1687,11 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2960928280184063694, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483485957002271556, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
       propertyPath: m_IsActive
       value: 1
