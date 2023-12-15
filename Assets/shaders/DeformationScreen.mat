@@ -74,7 +74,7 @@ Material:
     - _Size: 0.03
     - _Speed: 0.5
     - _SrcBlend: 5
-    - _Strength: -0.05
+    - _Strength: -0.02
     - _Surface: 1
     - _WaveDistanceFromCenter: -0.1
     - _WorkflowMode: 1
