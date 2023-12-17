@@ -14,8 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogs:
   - Character: {fileID: 11400000, guid: ebeae124a08dc64428396377dc558c79, type: 2}
-    DialogLine: 'Qu''est ce que tu fais ici toi ? '
+    DialogLine: Hm? How did you enter? You dare approach the lair of our great master?
   - Character: {fileID: 11400000, guid: 86084142af7e2c846a7ba9557818af61, type: 2}
-    DialogLine: Miaou !!!
+    DialogLine: Mew.
   - Character: {fileID: 11400000, guid: ebeae124a08dc64428396377dc558c79, type: 2}
-    DialogLine: "Ah ! Va-t-en m\xE9chant chat !!!"
+    DialogLine: I see you have no shame in yourself. You remind me of someone...
+      Someone important.
+  - Character: {fileID: 11400000, guid: ebeae124a08dc64428396377dc558c79, type: 2}
+    DialogLine: Mew mew!
+  - Character: {fileID: 11400000, guid: ebeae124a08dc64428396377dc558c79, type: 2}
+    DialogLine: 'You won''t be able to defile this place. I won''t let you. '
+  - Character: {fileID: 11400000, guid: ebeae124a08dc64428396377dc558c79, type: 2}
+    DialogLine: Hiss!!!
+  - Character: {fileID: 11400000, guid: ebeae124a08dc64428396377dc558c79, type: 2}
+    DialogLine: ...Fine. Prove to me you're worthy to enter this sacred place. Only
+      then will I let you in, little cat.
+  - Character: {fileID: 11400000, guid: ebeae124a08dc64428396377dc558c79, type: 2}
+    DialogLine: Mew...
