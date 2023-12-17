@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Ui : MonoBehaviour
 {
+    public RythmGpe rythm;
+
     public GameObject Onglet;
     public Color ColorNotUsing;
     public Image[] Image;
@@ -20,14 +22,22 @@ public class Ui : MonoBehaviour
 
     private void Update()
     {
-        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        if (_isUiActiveCollect == false)
+        if (rythm.IsActive == false)
         {
-            InventoryAffTouch(mousePos);
-        }
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        Onglet.SetActive(_isUiActive);
+            if (_isUiActiveCollect == false)
+            {
+                InventoryAffTouch(mousePos);
+            }
+
+            Onglet.SetActive(_isUiActive);
+        }  
+        else if (_isUiActive != false)
+        {
+            _isUiActive = false;
+            Onglet.SetActive(_isUiActive);
+        }
     }
 
     private void InventoryAffTouch(Vector3 mousePos)

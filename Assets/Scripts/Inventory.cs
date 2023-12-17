@@ -40,20 +40,23 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        MouseDown();
-        GetObjectPlayer(ValueDistanceObject);
-        UseObjectPlayer(ValueDistanceDoor, _objectUse, _doorUse, _objectUseIndex);
-
-        if (_objectIndex != -1)
+        if (rythm.IsActive == false)
         {
-            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            var pos = new Vector3(mousePos.x, mousePos.y, 0);
+            MouseDown();
+            GetObjectPlayer(ValueDistanceObject);
+            UseObjectPlayer(ValueDistanceDoor, _objectUse, _doorUse, _objectUseIndex);
 
-            ObjectDragUi.transform.position = pos;
-
-            if (Input.GetMouseButtonUp(0))
+            if (_objectIndex != -1)
             {
-                Drop(_objectIndex, ObjectsInInventory[_objectIndex]);
+                var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                var pos = new Vector3(mousePos.x, mousePos.y, 0);
+
+                ObjectDragUi.transform.position = pos;
+
+                if (Input.GetMouseButtonUp(0))
+                {
+                    Drop(_objectIndex, ObjectsInInventory[_objectIndex]);
+                }
             }
         }
     }
@@ -80,16 +83,19 @@ public class Inventory : MonoBehaviour
 
     public void Drag(int index)
     {
-        if (ObjectsInInventory[index] != null)
+        if (rythm.IsActive == false)
         {
-            if (!ObjectDragUi.activeInHierarchy)
+            if (ObjectsInInventory[index] != null)
             {
-                ObjectDragUi.SetActive(true);
-                ObjectDragUi.GetComponent<Image>().sprite = ObjectsInInventory[index].sprite;
-                ObjectDragUi.GetComponent<Image>().color = ObjectsInInventory[index].color;
-            }
+                if (!ObjectDragUi.activeInHierarchy)
+                {
+                    ObjectDragUi.SetActive(true);
+                    ObjectDragUi.GetComponent<Image>().sprite = ObjectsInInventory[index].sprite;
+                    ObjectDragUi.GetComponent<Image>().color = ObjectsInInventory[index].color;
+                }
 
-            _objectIndex = index;
+                _objectIndex = index;
+            }
         }
     }
 
@@ -126,13 +132,6 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < ObjectsInInventory.Length; i++)
         {
-            //if (ObjectsInInventory[i] == obj.GetComponent<Collectable>().ScrpitableObjectRefObjects)
-            //{
-            //    Debug.Log($"{obj.name} is already in Inventory !");
-            //    obj = null;
-            //    break;
-            //}
-
             if (ObjectsInInventory[i] == null)
             {
                 ObjectsInInventory[i] = obj.GetComponent<Collectable>().ScrpitableObjectRefObjects;

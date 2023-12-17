@@ -6,6 +6,8 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerMove : MonoBehaviour
 {
+    public RythmGpe rythm;
+
     public NavMeshAgent agent;
     public UnityEngine.Transform transformChild;
     public Vector2 followSpot;
@@ -18,8 +20,11 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        MouseDownDestination();
-        MeshRotation();
+        if (rythm.IsActive == false)
+        {
+            MouseDownDestination();
+            MeshRotation();
+        }
     }
 
     void MouseDownDestination()

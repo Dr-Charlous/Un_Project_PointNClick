@@ -14,5 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Icones
   TimerIcone: 1
   TimerBetweenIcones: 2
-  colorInit: {r: 0, g: 0, b: 0, a: 0}
-  colorConfirm: {r: 0, g: 0, b: 0, a: 0}

@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -23,6 +22,7 @@ public class ListIcones : ScriptableObject
 public class RythmGpe : MonoBehaviour
 {
     public int Score = 0;
+    public int Xpos = 1, XMpos = -1, Ypos = 1, YMpos = -1;
     public bool IsActive = false;
     public ListIcones ListIcones;
     public Image IconeClicker;
@@ -63,11 +63,14 @@ public class RythmGpe : MonoBehaviour
         for (int i = 0; i < ListIcones.Icones.Length; i++)
         {
             IconeClicker.color = ListIcones.colorInit;
+            Vector2 InitPos = IconeClicker.gameObject.transform.position;
+            IconeClicker.gameObject.transform.position = new Vector2(UnityEngine.Random.Range(XMpos, Xpos) + InitPos.x, UnityEngine.Random.Range(YMpos, Ypos) + InitPos.y);
             IconeClicker.gameObject.SetActive(true);
             yield return new WaitForSeconds(ListIcones.Icones[i].TimerIcone);
             IconeClicker.gameObject.SetActive(false);
             if (isTouch == false && IconeClicker.color == ListIcones.colorInit)
             {
+                IconeClicker.gameObject.transform.position = InitPos;
                 break;
             }
             else
@@ -75,7 +78,10 @@ public class RythmGpe : MonoBehaviour
                 isTouch = false;
 
                 if (Score != ListIcones.Icones.Length - 1)
+                {
+                    IconeClicker.gameObject.transform.position = InitPos;
                     yield return new WaitForSeconds(ListIcones.Icones[i].TimerBetweenIcones);
+                }
             }
         }
 

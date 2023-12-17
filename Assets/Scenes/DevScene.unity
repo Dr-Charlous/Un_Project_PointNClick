@@ -1239,6 +1239,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3871832851560822916, guid: ecd37d63997e6204d8f8df513cd9f91c,
+        type: 3}
+      propertyPath: rythm
+      value: 
+      objectReference: {fileID: 2947592793565777674}
     - target: {fileID: 5997019491594838106, guid: ecd37d63997e6204d8f8df513cd9f91c,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -1455,6 +1460,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2386855539481439445, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386855539481439445, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
       propertyPath: m_Name
       value: Icone
       objectReference: {fileID: 0}
@@ -1532,11 +1542,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 0.078431375
-      objectReference: {fileID: 0}
-    - target: {fileID: 5168726610827389711, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5500110549415070086, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
@@ -1803,6 +1808,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2947592793565777674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3483508511810720338, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 2716396454556237542}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716396454556237543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3676560575f67064cb25eb6bad0710fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3551589563368644613
 PrefabInstance:
   m_ObjectHideFlags: 0

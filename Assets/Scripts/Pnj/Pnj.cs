@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Pnj : MonoBehaviour
 {
+    public RythmGpe rythm;
+
     public Image ImageCharacter;
     public TextMeshProUGUI TextComponent;
 
@@ -25,7 +27,10 @@ public class Pnj : MonoBehaviour
 
     private void Update()
     {
-        MouseDown();
+        if (rythm.IsActive == false)
+        {
+            MouseDown();
+        }
     }
 
     void MouseDown()
