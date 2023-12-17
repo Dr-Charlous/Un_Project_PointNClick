@@ -52,12 +52,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8912f12d61d4d40ad6ff11e341eff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rythm: {fileID: 0}
   ImageCharacter: {fileID: 4309969617064818776}
   TextComponent: {fileID: 2966873113674138816}
-  Dialog: {fileID: 11400000, guid: 856fddd52ee717d47b1206a954c45673, type: 2}
+  Dialog:
+  - {fileID: 11400000, guid: 856fddd52ee717d47b1206a954c45673, type: 2}
+  - {fileID: 11400000, guid: aa69cf7aec0a1264d944475b966a5e97, type: 2}
   Collider2D: {fileID: 236137560028825653}
   DilaogAff: {fileID: 7833106258018370708}
   AudioSource: {fileID: 321998938239592494}
+  _currentDialog: 0
 --- !u!61 &236137560028825653
 BoxCollider2D:
   m_ObjectHideFlags: 0

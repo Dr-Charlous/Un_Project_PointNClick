@@ -11,12 +11,13 @@ public class Pnj : MonoBehaviour
     public Image ImageCharacter;
     public TextMeshProUGUI TextComponent;
 
-    public ScriptableDialog Dialog;
+    public ScriptableDialog[] Dialog;
     public BoxCollider2D Collider2D;
 
     public GameObject DilaogAff;
     public AudioSource AudioSource;
 
+    public int _currentDialog = 0;
     private int _currentText = 0;
     private bool _isDialogActive = false;
 
@@ -42,33 +43,33 @@ public class Pnj : MonoBehaviour
 
             if (_isDialogActive)
             {
-                WriteDialog();
+                WriteDialog(_currentDialog);
             }
             else if (hit.collider != null && hit.collider.GetComponent<Pnj>() != null)
             {
                 _isDialogActive = true;
-                WriteDialog();
+                WriteDialog(_currentDialog);
             }
         }
     }
 
-    public void WriteDialog()
+    public void WriteDialog(int index)
     {
-        if (_currentText < Dialog.Dialogs.Length)
+        if (_currentText < Dialog[index].Dialogs.Length)
         {
-            if (Dialog.Dialogs[_currentText].Character != null)
+            if (Dialog[index].Dialogs[_currentText].Character != null)
             {
-                ImageCharacter.sprite = Dialog.Dialogs[_currentText].Character.SpriteCharacter;
+                ImageCharacter.sprite = Dialog[index].Dialogs[_currentText].Character.SpriteCharacter;
 
-                if (Dialog.Dialogs[_currentText].Character.Sounds.Length != 0)
+                if (Dialog[index].Dialogs[_currentText].Character.Sounds.Length != 0)
                 {
-                    AudioSource.clip = Dialog.Speak(Dialog.Dialogs[_currentText].Character);
+                    AudioSource.clip = Dialog[index].Speak(Dialog[index].Dialogs[_currentText].Character);
                     AudioSource.Play();
                 }
             }
-            if (Dialog.Dialogs[_currentText].DialogLine != null)
+            if (Dialog[index].Dialogs[_currentText].DialogLine != null)
             {
-                TextComponent.text = Dialog.Dialogs[_currentText].DialogLine;
+                TextComponent.text = Dialog[index].Dialogs[_currentText].DialogLine;
             }
 
             _currentText++;
@@ -76,6 +77,8 @@ public class Pnj : MonoBehaviour
         else
         {
             _currentText = 0;
+            if (_currentDialog < Dialog.Length - 1)
+                _currentDialog++;
             ImageCharacter.sprite = null;
             TextComponent.text = "";
             _isDialogActive = false;
