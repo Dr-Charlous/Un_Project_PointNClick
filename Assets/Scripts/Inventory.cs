@@ -2,6 +2,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+[CreateAssetMenu(fileName = "InventoryS", menuName = "ScriptableObjects/ScriptableInventory", order = 1)]
+public class InventoryScriptable : ScriptableObject
+{
+    public CollectableUIScriptableObject[] ObjectsInInventoryS;
+}
+
 public class Inventory : MonoBehaviour
 {
     public Ui Ui;
@@ -11,6 +17,7 @@ public class Inventory : MonoBehaviour
     public GameObject Interogation;
     public GameObject Exclamation;
 
+    public InventoryScriptable InventoryS;
     public CollectableUIScriptableObject[] ObjectsInInventory;
     public GameObject ObjectDragUi;
 
@@ -36,6 +43,8 @@ public class Inventory : MonoBehaviour
         ObjectDragUi.SetActive(false);
 
         Animator.gameObject.SetActive(true);
+        ObjectsInInventory = InventoryS.ObjectsInInventoryS;
+        Ui.AffObjectUi(ObjectsInInventory, Ui.Image);
     }
 
     private void Update()
@@ -170,6 +179,7 @@ public class Inventory : MonoBehaviour
                 {
                     StartCoroutine(ChangeScene(2, doorUse, index));
 
+                    scriptable.IsUsed = true;
                     _doorUse = null;
                     _objectUse = null;
                     _objectUseIndex = -1;
@@ -190,6 +200,7 @@ public class Inventory : MonoBehaviour
 
     public IEnumerator ChangeScene(float time, ObjectActionWithCollectable doorUse, int index)
     {
+        InventoryS.ObjectsInInventoryS = ObjectsInInventory;
         yield return new WaitForSeconds(time);
         doorUse.Action(ObjectsInInventory[index], index, true);
     }

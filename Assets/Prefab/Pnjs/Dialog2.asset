@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Dialog2
   m_EditorClassIdentifier: 
   Dialogs:
-  - Character: {fileID: 0}
+  - Character: {fileID: 11400000, guid: ebeae124a08dc64428396377dc558c79, type: 2}
     DialogLine: With your little paws you won't be able to pass through me.
-  - Character: {fileID: 11400000, guid: 1e144c0f6081e224c9a282a7a6f9def0, type: 2}
+  - Character: {fileID: 11400000, guid: 86084142af7e2c846a7ba9557818af61, type: 2}
     DialogLine: Mew mew mew.
-  - Character: {fileID: 0}
+  - Character: {fileID: 11400000, guid: ebeae124a08dc64428396377dc558c79, type: 2}
     DialogLine: The only way you can enter is by bringing bringing me to my knees.
       But only the strongest of fire will ever do that.
-  - Character: {fileID: 0}
+  - Character: {fileID: 11400000, guid: 86084142af7e2c846a7ba9557818af61, type: 2}
     DialogLine: 'Mew ! '

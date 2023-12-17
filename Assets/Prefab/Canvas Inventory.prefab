@@ -1287,7 +1287,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5949420320217395575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.81, z: 0}
+  m_LocalPosition: {x: 0, y: -1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1619,6 +1619,7 @@ MonoBehaviour:
   rythm: {fileID: 3483508511810720338}
   Interogation: {fileID: 6488398293639112755}
   Exclamation: {fileID: 4240813081610303176}
+  InventoryS: {fileID: 11400000, guid: 5868b5367aacbe74da4d77853229c04a, type: 2}
   ObjectsInInventory:
   - {fileID: 0}
   - {fileID: 0}
