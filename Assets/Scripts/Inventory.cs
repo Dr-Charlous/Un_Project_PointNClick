@@ -1,17 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using System;
-using Unity.Burst.CompilerServices;
-using Unity.VisualScripting;
-using static UnityEditor.PlayerSettings;
 
 public class Inventory : MonoBehaviour
 {
     public Ui Ui;
     public PlayerMove PlayerMoveCode;
+    public RythmGpe rythm;
 
     public GameObject Interogation;
     public GameObject Exclamation;
@@ -49,7 +44,7 @@ public class Inventory : MonoBehaviour
         GetObjectPlayer(ValueDistanceObject);
         UseObjectPlayer(ValueDistanceDoor, _objectUse, _doorUse, _objectUseIndex);
 
-        if (_objectIndex != -1 )
+        if (_objectIndex != -1)
         {
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             var pos = new Vector3(mousePos.x, mousePos.y, 0);
@@ -58,7 +53,7 @@ public class Inventory : MonoBehaviour
 
             if (Input.GetMouseButtonUp(0))
             {
-                Drop(_objectIndex);
+                Drop(_objectIndex, ObjectsInInventory[_objectIndex]);
             }
         }
     }
@@ -87,9 +82,6 @@ public class Inventory : MonoBehaviour
     {
         if (ObjectsInInventory[index] != null)
         {
-            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            var pos = new Vector3(mousePos.x, mousePos.y, 0);
-
             if (!ObjectDragUi.activeInHierarchy)
             {
                 ObjectDragUi.SetActive(true);
@@ -101,23 +93,29 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void Drop(int index)
+    public void Drop(int index, CollectableUIScriptableObject scriptableObject)
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         RaycastHit2D hit = Physics2D.Raycast((Vector2)mousePosition, Vector2.zero);
 
-        if (hit.collider != null && hit.collider.GetComponent<ObjectActionWithCollectable>() != null && ObjectsInInventory[index] != null)
+        if (hit.collider != null && hit.collider.GetComponent<ObjectActionWithCollectable>() != null)
         {
-            _doorUse = hit.collider.GetComponent<ObjectActionWithCollectable>();
-            _objectUse = ObjectsInInventory[index];
-            _objectUseIndex = index;
+            if (ObjectsInInventory[index] != null)
+            {
+                _doorUse = hit.collider.GetComponent<ObjectActionWithCollectable>();
+                _objectUse = ObjectsInInventory[index];
+                _objectUseIndex = index;
 
-            StartCoroutine(AffExpressions(Exclamation, 1));
-        }
-        else if (hit.collider != null && hit.collider.GetComponent<ObjectActionWithCollectable>() != null)
-        {
-            StartCoroutine(AffExpressions(Interogation, 1));
+                if (hit.collider.GetComponent<ObjectActionWithCollectable>().Action(scriptableObject, index, false))
+                {
+                    StartCoroutine(AffExpressions(Exclamation, 1));
+                }
+                else
+                {
+                    StartCoroutine(AffExpressions(Interogation, 1));
+                }
+            }
         }
 
         _objectIndex = -1;
@@ -147,14 +145,17 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        Debug.Log("Not enough place in Inventory !");
+        if (_objectCollect != null)
+        {
+            Debug.Log("Not enough place in Inventory !");
+        }
     }
 
     public void GetObjectPlayer(float value)
     {
         if (_objectCollect == null) return;
 
-        if (Vector3.Distance(PlayerMoveCode.gameObject.transform.position, _objectCollect.transform.position) < value)
+        if (Vector3.Distance(PlayerMoveCode.gameObject.transform.position, _objectCollect.transform.position) < value && _objectCollect != null)
         {
             GetInInventory(_objectCollect);
         }
@@ -162,18 +163,22 @@ public class Inventory : MonoBehaviour
 
     public void UseObjectPlayer(float value, CollectableUIScriptableObject scriptable, ObjectActionWithCollectable doorUse, int index)
     {
-        if (_objectUse == null || _doorUse == null || _objectUseIndex == -1) return;
-
-        if (Vector3.Distance(PlayerMoveCode.gameObject.transform.position, doorUse.transform.position) < value)
+        if (_objectUse != null && _doorUse != null && _objectUseIndex != -1)
         {
-            StartCoroutine(ChangeScene(2, doorUse, index));
+            if (Vector3.Distance(PlayerMoveCode.gameObject.transform.position, doorUse.transform.position) < value)
+            {
+                if (doorUse.Action(scriptable, index, true))
+                {
+                    StartCoroutine(ChangeScene(2, doorUse, index));
 
-            _doorUse = null;
-            _objectUse = null;
-            _objectUseIndex = -1;
+                    _doorUse = null;
+                    _objectUse = null;
+                    _objectUseIndex = -1;
 
-            StartCoroutine(Ui.ScreenShake(Intensity, Duration));
-            Animator.SetTrigger("Closing");
+                    StartCoroutine(Ui.ScreenShake(Intensity, Duration));
+                    //Animator.SetTrigger("Closing");
+                }
+            }
         }
     }
 
@@ -186,7 +191,7 @@ public class Inventory : MonoBehaviour
 
     public IEnumerator ChangeScene(float time, ObjectActionWithCollectable doorUse, int index)
     {
-        yield return new WaitForSeconds(1);
-        doorUse.Action(ObjectsInInventory[index], index, SceneManager.GetActiveScene().name);
+        yield return new WaitForSeconds(time);
+        doorUse.Action(ObjectsInInventory[index], index, true);
     }
 }
