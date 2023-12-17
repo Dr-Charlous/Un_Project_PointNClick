@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8fd654a87fb60c74eabc3370fc57b594
+guid: 6e89bc3ecf2cd234eba0a5507352e78e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,127 +110,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cat_Character_Walk_0
+      name: Cat_Expressions_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.09375}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1b94631fcc39044eb2cf98e5fea827b
-      internalID: -1507390866
+      spriteID: 5c2f013bcdecc184d945a220a158f8c3
+      internalID: 1713572430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat_Character_Walk_1
+      name: Cat_Expressions_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 16
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.09375}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89549a76f805a0c4f8fb2c7c03bd3e62
-      internalID: -1490145596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cat_Character_Walk_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.09375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a40f0f5fc9204d844840b8ffee732970
-      internalID: 1911693492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cat_Character_Walk_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.09375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f5665994ecb75d4aab39bf62fa4dc9a
-      internalID: -793776695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cat_Character_Walk_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.09375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 825f453275171c040a4c5ce6018d7e9c
-      internalID: 2095131079
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cat_Character_Walk_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.09375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af06fabb8099c904eb2f0200b15de6f8
-      internalID: 77400391
+      spriteID: 090818d748dc4e541872d537f6706b87
+      internalID: -1439990930
       vertices: []
       indices: 
       edges: []
@@ -238,7 +154,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e46e168001eae484c9e584903d367962
+    spriteID: 1562e04039e2fbc49bec68d72e05bc36
     internalID: 0
     vertices: []
     indices: 
@@ -246,12 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cat_Character_Walk_0: -1507390866
-      Cat_Character_Walk_1: -1490145596
-      Cat_Character_Walk_2: 1911693492
-      Cat_Character_Walk_3: -793776695
-      Cat_Character_Walk_4: 2095131079
-      Cat_Character_Walk_5: 77400391
+      Cat_Expressions_0: 1713572430
+      Cat_Expressions_1: -1439990930
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
