@@ -545,7 +545,7 @@ SpriteRenderer:
   m_Size: {x: 3.21115, y: 1.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &458277978
@@ -1388,10 +1388,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 646493522240456254, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_Delegates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002639898508133893, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_Delegates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056606017682649782, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_Delegates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1364975565277255021, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
       propertyPath: m_Color.a
       value: 0.078431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773674074479561860, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_Delegates.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1775107029808967165, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
@@ -1432,6 +1452,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386855539481439445, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Icone
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386855539481439445, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2960928280184063694, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
@@ -1483,6 +1513,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 4324825967350867112, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_Delegates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4379367517133861108, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
       propertyPath: m_Color.a
@@ -1497,6 +1532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 0.078431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 5168726610827389711, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5500110549415070086, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
@@ -1715,6 +1755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 950080311244210403, guid: e1d365aa5b2a59f49baf9a7026dd19ab, type: 3}
+    - {fileID: 9018555965101320226, guid: e1d365aa5b2a59f49baf9a7026dd19ab, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

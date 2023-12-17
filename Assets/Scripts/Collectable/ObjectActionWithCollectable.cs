@@ -12,19 +12,22 @@ public class ObjectActionWithCollectable : MonoBehaviour
     public SceneAsset SceneActiveObject;
     public SceneAsset SceneDestination;
 
-    public void Action(CollectableUIScriptableObject key, int index, string scene)
+    public bool Action(CollectableUIScriptableObject key, int index, bool action)
     {
-        if (key == Door && scene == SceneActiveObject.name)
+        if (key == Door && SceneManager.GetActiveScene().name == SceneActiveObject.name)
         {
-            Debug.Log("Ouais");
+            if (action)
+            {
+                inventory.ObjectsInInventory[index] = null;
+                inventory.Ui.AffObjectUi(inventory.ObjectsInInventory, inventory.Ui.Image);
+                //GoToScene(SceneDestination);
+            }
 
-            inventory.ObjectsInInventory[index] = null;
-            inventory.Ui.AffObjectUi(inventory.ObjectsInInventory, inventory.Ui.Image);
-            GoToScene(SceneDestination);
+            return true;
         }
         else
         {
-            Debug.Log("Non");
+            return false;
         }
     }
 
