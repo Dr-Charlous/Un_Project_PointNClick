@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa17f0479b6ebd348b01c7945c512f06, type: 3}
   m_Name: BoissonVide
   m_EditorClassIdentifier: 
-  IsUsed: 1
+  IsUsed: 0
   sprite: {fileID: -1473247962, guid: dd418d02466aaad44a357dabdcb61bde, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
