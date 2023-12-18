@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -78,6 +80,12 @@ public class Inventory : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 
+            if (hit.collider != null && hit.collider.GetComponent<ObjectActionWithCollectable>() != null && hit.collider.GetComponent<ObjectActionWithCollectable>().doors.isOpen == true)
+            {
+                ChangeScene();
+                hit.collider.GetComponent<ObjectActionWithCollectable>().GoToScene(hit.collider.GetComponent<ObjectActionWithCollectable>().SceneDestination);
+            }
+
             if (hit.collider != null && hit.collider.GetComponent<Collectable>() != null)
             {
                 _objectCollect = hit.collider.gameObject;
@@ -143,6 +151,7 @@ public class Inventory : MonoBehaviour
         {
             if (ObjectsInInventory[i] == null)
             {
+                _objectCollect.GetComponent<Collectable>().ScrpitableObjectRefObjects.IsUsed = true;
                 ObjectsInInventory[i] = obj.GetComponent<Collectable>().ScrpitableObjectRefObjects;
                 obj.SetActive(false);
 
@@ -177,19 +186,21 @@ public class Inventory : MonoBehaviour
             {
                 if (doorUse.Check(scriptable))
                 {
-                    doorUse.Action(scriptable, index);
-                    StartCoroutine(ChangeScene(2, doorUse, index));
-
-                    scriptable.IsUsed = true;
-                    _doorUse = null;
-                    _objectUse = null;
-                    _objectUseIndex = -1;
-
-                    StartCoroutine(Ui.ScreenShake(Intensity, Duration));
-                    //Animator.SetTrigger("Closing");
+                    ChangeScene();
+                    StartCoroutine(ChangeSceneWaiter(2, scriptable, doorUse, index));
                 }
             }
         }
+    }
+
+    public void ChangeScene()
+    {
+        _doorUse = null;
+        _objectUse = null;
+        _objectUseIndex = -1;
+
+        StartCoroutine(Ui.ScreenShake(Intensity, Duration));
+        Animator.SetTrigger("Closing");
     }
 
     public IEnumerator AffExpressions(GameObject obj, int time)
@@ -199,10 +210,10 @@ public class Inventory : MonoBehaviour
         obj.SetActive(false);
     }
 
-    public IEnumerator ChangeScene(float time, ObjectActionWithCollectable doorUse, int index)
+    public IEnumerator ChangeSceneWaiter(float time, CollectableUIScriptableObject scriptable, ObjectActionWithCollectable doorUse, int index)
     {
         InventoryS.ObjectsInInventoryS = ObjectsInInventory;
         yield return new WaitForSeconds(time);
-        doorUse.Action(ObjectsInInventory[index], index);
+        doorUse.Action(scriptable, index);
     }
 }
