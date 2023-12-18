@@ -284,10 +284,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.520436
-    y: 0.06785137
-    width: 0.29064488
-    height: 0.2907916
+    x: 0.06357857
+    y: 0.06300485
+    width: 0.87193465
+    height: 0.87237483
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -991,7 +991,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 0.6666667}
+  m_Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2070,6 +2070,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 4199947161169082074, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4324825967350867112, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
       propertyPath: m_Delegates.Array.size
@@ -2084,6 +2089,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716010020016972091, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: anim
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4790821462476696511, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
