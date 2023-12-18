@@ -75,7 +75,7 @@ public class Inventory : MonoBehaviour
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.Raycast((Vector2)mousePosition, Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 
             if (hit.collider != null && hit.collider.GetComponent<Collectable>() != null)
             {
@@ -111,7 +111,6 @@ public class Inventory : MonoBehaviour
     public void Drop(int index, CollectableUIScriptableObject scriptableObject)
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
         RaycastHit2D hit = Physics2D.Raycast((Vector2)mousePosition, Vector2.zero);
 
         if (hit.collider != null && hit.collider.GetComponent<ObjectActionWithCollectable>() != null)
@@ -122,7 +121,7 @@ public class Inventory : MonoBehaviour
                 _objectUse = ObjectsInInventory[index];
                 _objectUseIndex = index;
 
-                if (hit.collider.GetComponent<ObjectActionWithCollectable>().Action(scriptableObject, index, false))
+                if (hit.collider.GetComponent<ObjectActionWithCollectable>().Check(scriptableObject))
                 {
                     StartCoroutine(AffExpressions(Exclamation, 1));
                 }
@@ -162,7 +161,7 @@ public class Inventory : MonoBehaviour
     public void GetObjectPlayer(float value)
     {
         if (_objectCollect == null) return;
-
+        
         if (Vector3.Distance(PlayerMoveCode.gameObject.transform.position, _objectCollect.transform.position) < value && _objectCollect != null)
         {
             GetInInventory(_objectCollect);
@@ -175,8 +174,9 @@ public class Inventory : MonoBehaviour
         {
             if (Vector3.Distance(PlayerMoveCode.gameObject.transform.position, doorUse.transform.position) < value)
             {
-                if (doorUse.Action(scriptable, index, true))
+                if (doorUse.Check(scriptable))
                 {
+                    doorUse.Action(scriptable, index);
                     StartCoroutine(ChangeScene(2, doorUse, index));
 
                     scriptable.IsUsed = true;
@@ -202,6 +202,6 @@ public class Inventory : MonoBehaviour
     {
         InventoryS.ObjectsInInventoryS = ObjectsInInventory;
         yield return new WaitForSeconds(time);
-        doorUse.Action(ObjectsInInventory[index], index, true);
+        doorUse.Action(ObjectsInInventory[index], index);
     }
 }
