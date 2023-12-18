@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerMove : MonoBehaviour
 {
+    public Animator anim;
     public RythmGpe rythm;
     public NavMeshAgent agent;
     [Header("")]
@@ -30,9 +31,17 @@ public class PlayerMove : MonoBehaviour
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+
+        Debug.Log(agent.velocity.magnitude);
+
         if (Input.GetMouseButtonUp(0))
         {
             followSpot = new Vector2(mousePosition.x, mousePosition.y);
+            Anims.Instance.ActivateAnimSolo(anim, "Walk");
+        }
+        else if (Vector3.Distance(transform.position, followSpot) < 0.1f)
+        {
+            Anims.Instance.DesactivateAnimSolo(anim, "Walk");
         }
 
         agent.SetDestination(Vector2.MoveTowards(transform.position, followSpot, Time.deltaTime * speed));
