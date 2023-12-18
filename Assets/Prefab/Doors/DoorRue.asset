@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Doors
   isOpen: 1
   Door: {fileID: 11400000, guid: 0b0cf780f01a04947950732d3621328a, type: 2}
-  SceneActiveObject: {fileID: 102900000, guid: 5f84543f08969314c84b0145a60b25e0, type: 3}
-  SceneDestination: {fileID: 102900000, guid: 99e53b4a84c9fc948a98677d2b0de1eb, type: 3}
+  SceneActiveObject: {fileID: 102900000, guid: 99e53b4a84c9fc948a98677d2b0de1eb, type: 3}
+  SceneDestination: {fileID: 102900000, guid: 2ff53d6cceb86e147aa5283ee18ef808, type: 3}

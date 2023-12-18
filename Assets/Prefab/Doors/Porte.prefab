@@ -151,5 +151,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doors: {fileID: 11400000, guid: 172ed7e7a55c01e4e9de182223c41635, type: 2}
-  SceneDestination: {fileID: 102900000, guid: 99e53b4a84c9fc948a98677d2b0de1eb, type: 3}
+  SceneDestination: {fileID: 102900000, guid: 2ff53d6cceb86e147aa5283ee18ef808, type: 3}
   inventory: {fileID: 0}
