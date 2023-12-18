@@ -8,6 +8,7 @@ public class Ui : MonoBehaviour
 {
     public RythmGpe rythm;
 
+    public int DistanceUiAff = 1;
     public GameObject Onglet;
     public Color ColorNotUsing;
     public Image[] Image;
@@ -17,6 +18,8 @@ public class Ui : MonoBehaviour
 
     private void Start()
     {
+        _isUiActive = false;
+        _isUiActiveCollect = false;
         Onglet.SetActive(false);
     }
 
@@ -32,7 +35,7 @@ public class Ui : MonoBehaviour
             }
 
             Onglet.SetActive(_isUiActive);
-        }  
+        }
         else if (_isUiActive != false)
         {
             _isUiActive = false;
@@ -42,11 +45,16 @@ public class Ui : MonoBehaviour
 
     private void InventoryAffTouch(Vector3 mousePos)
     {
-        if ((mousePos.x >= -1 + transform.position.x && mousePos.x <= 1 + transform.position.x) && (mousePos.y <= 1 + transform.position.y && mousePos.y >= -1 + transform.position.y) && _isUiActive == false)
+        var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast((Vector2)mousePosition, Vector2.zero);
+
+        float distance = Vector3.Distance(hit.point, transform.position);
+
+        if (distance <= DistanceUiAff && _isUiActive == false)
         {
             _isUiActive = true;
         }
-        else if ((mousePos.x >= -1 + transform.position.x && mousePos.x <= 1 + transform.position.x) && (mousePos.y <= 1 + transform.position.y && mousePos.y >= -7 + transform.position.y) && _isUiActive)
+        else if (hit.collider != null && hit.collider.GetComponent<Inventory>() != null && _isUiActive)
         {
             _isUiActive = true;
         }
@@ -56,9 +64,12 @@ public class Ui : MonoBehaviour
         }
     }
 
-    public void AffObjectUi(CollectableUIScriptableObject[] obj, Image[] im)
+    public void AffObjectUi(CollectableUIScriptableObject[] obj, Image[] im, bool begin)
     {
-        StartCoroutine(AffInventoryCollect(2f));
+        if (begin == false)
+        {
+            StartCoroutine(AffInventoryCollect(2f));
+        }
 
         for (int i = 0; i < obj.Length; i++)
         {

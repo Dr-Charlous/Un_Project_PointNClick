@@ -44,7 +44,7 @@ public class Inventory : MonoBehaviour
 
         Animator.gameObject.SetActive(true);
         ObjectsInInventory = InventoryS.ObjectsInInventoryS;
-        Ui.AffObjectUi(ObjectsInInventory, Ui.Image);
+        Ui.AffObjectUi(ObjectsInInventory, Ui.Image, true);
     }
 
     private void Update()
@@ -147,7 +147,7 @@ public class Inventory : MonoBehaviour
                 obj.SetActive(false);
 
                 Debug.Log($"{obj.name} go in Inventory !");
-                Ui.AffObjectUi(ObjectsInInventory, Ui.Image);
+                Ui.AffObjectUi(ObjectsInInventory, Ui.Image, false);
                 _objectCollect = null;
                 break;
             }

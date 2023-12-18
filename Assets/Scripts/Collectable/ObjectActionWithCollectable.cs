@@ -19,7 +19,7 @@ public class ObjectActionWithCollectable : MonoBehaviour
             if (action)
             {
                 inventory.ObjectsInInventory[index] = null;
-                inventory.Ui.AffObjectUi(inventory.ObjectsInInventory, inventory.Ui.Image);
+                inventory.Ui.AffObjectUi(inventory.ObjectsInInventory, inventory.Ui.Image, false);
                 GoToScene(SceneDestination);
             }
 
