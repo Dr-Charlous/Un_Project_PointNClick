@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: InventoryS
   m_EditorClassIdentifier: Assembly-CSharp::InventoryScriptable
   ObjectsInInventoryS:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 0b0cf780f01a04947950732d3621328a, type: 2}
+  - {fileID: 11400000, guid: fa21f023053d2e5418c83cd1fbf313c7, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
