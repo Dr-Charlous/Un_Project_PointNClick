@@ -1376,12 +1376,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.13002351, y: 0.33451805}
-      - {x: -0.46191147, y: 0.32984814}
+    - - {x: -0.14767553, y: 0.232953}
+      - {x: -0.45755607, y: 0.17560832}
       - {x: -0.46304053, y: -0.2810864}
-      - {x: 0.335104, y: -0.2711357}
-      - {x: 0.33699986, y: 0.12198809}
-      - {x: -0.12921521, y: 0.12950563}
+      - {x: 0.4540451, y: -0.2836607}
+      - {x: 0.45002693, y: 0.14736387}
+      - {x: 0.10018652, y: 0.2373876}
+      - {x: -0.017965859, y: 0.35294458}
   m_UseDelaunayMesh: 0
 --- !u!1 &1078481957
 GameObject:
@@ -2305,7 +2306,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 887de82565de18f4fae611b8f0b6c67a,
+      objectReference: {fileID: 23800000, guid: 9b521033b7e8db7438e55764c8f24d7b,
         type: 2}
     - target: {fileID: 1687258208667939081, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
