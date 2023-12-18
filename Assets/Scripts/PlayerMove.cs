@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerMove : MonoBehaviour
 {
     public RythmGpe rythm;
-
     public NavMeshAgent agent;
-    public UnityEngine.Transform transformChild;
+    [Header("")]
+    public Transform transformChild;
     public Vector2 followSpot;
     public float speed;
 

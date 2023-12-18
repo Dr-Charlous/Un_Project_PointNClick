@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class Pnj : MonoBehaviour
 {
     public RythmGpe rythm;
-
+    [Header("")]
     public Image ImageCharacter;
     public TextMeshProUGUI TextComponent;
-
+    [Header("")]
     public ScriptableDialog[] Dialog;
     public BoxCollider2D Collider2D;
-
+    [Header("")]
     public GameObject DilaogAff;
     public AudioSource AudioSource;
 

@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,8 @@ public class Ui : MonoBehaviour
 {
     public RythmGpe rythm;
 
-    public int DistanceUiAff = 1;
+    [Header("")]
+    public float DistanceUiAff = 1;
     public GameObject Onglet;
     public Color ColorNotUsing;
     public Image[] Image;
@@ -62,6 +64,11 @@ public class Ui : MonoBehaviour
         {
             _isUiActive = false;
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawCube(transform.position, new Vector3(DistanceUiAff, DistanceUiAff, 0));
     }
 
     public void AffObjectUi(CollectableUIScriptableObject[] obj, Image[] im, bool begin)

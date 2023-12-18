@@ -13,21 +13,21 @@ public class Inventory : MonoBehaviour
     public Ui Ui;
     public PlayerMove PlayerMoveCode;
     public RythmGpe rythm;
-
+    [Header("")]
     public GameObject Interogation;
     public GameObject Exclamation;
-
+    [Header("")]
     public InventoryScriptable InventoryS;
     public CollectableUIScriptableObject[] ObjectsInInventory;
     public GameObject ObjectDragUi;
-
+    [Header("")]
     public float ValueDistanceObject = 3.5f;
     public float ValueDistanceDoor = 7.5f;
 
     [Header("ScreenShake N Anims : ")]
     public float Intensity = 1f;
     public float Duration = 4f;
-
+    [Header("")]
     public Animator Animator;
 
     private GameObject _objectCollect;

@@ -22,8 +22,11 @@ public class ListIcones : ScriptableObject
 public class RythmGpe : MonoBehaviour
 {
     public int Score = 0;
-    public int Xpos = 1, XMpos = -1, Ypos = 1, YMpos = -1;
+    [Header("")]
+    public float Xpos = 1, Ypos = -1;
+    private float XMpos = 1, YMpos = -1;
     public bool IsActive = false;
+    [Header("")]
     public ListIcones ListIcones;
     public Image IconeClicker;
 
@@ -55,22 +58,31 @@ public class RythmGpe : MonoBehaviour
                 StartCoroutine(RythmMiniGame());
             }
         }
+
+        if (Xpos != -XMpos)
+            XMpos = -Xpos;
+        if (Ypos != -YMpos)
+            YMpos = -Ypos;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawCube(IconeClicker.transform.position, new Vector2(Xpos * 2, Ypos * 2));
     }
 
     public IEnumerator RythmMiniGame()
     {
+        Vector2 InitPos = IconeClicker.gameObject.transform.position;
         IsActive = true;
         for (int i = 0; i < ListIcones.Icones.Length; i++)
         {
             IconeClicker.color = ListIcones.colorInit;
-            Vector2 InitPos = IconeClicker.gameObject.transform.position;
             IconeClicker.gameObject.transform.position = new Vector2(UnityEngine.Random.Range(XMpos, Xpos) + InitPos.x, UnityEngine.Random.Range(YMpos, Ypos) + InitPos.y);
             IconeClicker.gameObject.SetActive(true);
             yield return new WaitForSeconds(ListIcones.Icones[i].TimerIcone);
             IconeClicker.gameObject.SetActive(false);
             if (isTouch == false && IconeClicker.color == ListIcones.colorInit)
             {
-                IconeClicker.gameObject.transform.position = InitPos;
                 break;
             }
             else
@@ -95,5 +107,6 @@ public class RythmGpe : MonoBehaviour
         }
 
         IsActive = false;
+        IconeClicker.gameObject.transform.position = InitPos;
     }
 }
