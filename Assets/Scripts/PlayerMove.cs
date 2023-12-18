@@ -31,9 +31,6 @@ public class PlayerMove : MonoBehaviour
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-
-        Debug.Log(agent.velocity.magnitude);
-
         if (Input.GetMouseButtonUp(0))
         {
             followSpot = new Vector2(mousePosition.x, mousePosition.y);

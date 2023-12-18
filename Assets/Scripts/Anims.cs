@@ -19,7 +19,6 @@ public class Anims : MonoBehaviour
         }
     }
     #endregion
-
     public void ActivateAnimSolo(Animator animator, string nameAnim)
     {
         animator.SetBool(nameAnim, true);
@@ -29,6 +28,4 @@ public class Anims : MonoBehaviour
     {
         animator.SetBool(nameAnim, false);
     }
-
-
 }
