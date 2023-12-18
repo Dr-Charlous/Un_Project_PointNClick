@@ -49,7 +49,7 @@ public class ObjectActionWithCollectable : MonoBehaviour
             Door = objGive.Door;
         }
 
-        if (isOpen == true || isUsed == true)
+        if (isUsed == true)
         {
             if (ObjHide != null && ObjHide.GetComponent<Collectable>().ScrpitableObjectRefObjects.IsUsed == false)
             {

@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3166322008117759304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.93, y: 0.49, z: -7.1708345}
+  m_LocalPosition: {x: 5.93, y: 0.49, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -151,5 +151,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doors: {fileID: 11400000, guid: 172ed7e7a55c01e4e9de182223c41635, type: 2}
+  objGive: {fileID: 0}
+  ObjHide: {fileID: 0}
   SceneDestination: {fileID: 102900000, guid: 99e53b4a84c9fc948a98677d2b0de1eb, type: 3}
+  Door: {fileID: 0}
+  isOpen: 0
+  isUsed: 0
   inventory: {fileID: 0}
