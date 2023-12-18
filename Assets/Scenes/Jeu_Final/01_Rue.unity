@@ -383,10 +383,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+    x: 0.06357857
+    y: 0.06300485
+    width: 0.87193465
+    height: 0.87237483
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1101,9 +1101,9 @@ PolygonCollider2D:
     - - {x: -0.13002351, y: 0.33451805}
       - {x: -0.46191147, y: 0.32984814}
       - {x: -0.46304053, y: -0.2810864}
-      - {x: 0.335104, y: -0.2711357}
-      - {x: 0.33699986, y: 0.12198809}
-      - {x: -0.12921521, y: 0.12950563}
+      - {x: 0.4388903, y: -0.25610214}
+      - {x: 0.43271518, y: 0.016342565}
+      - {x: 0.17590097, y: 0.34444124}
   m_UseDelaunayMesh: 0
 --- !u!1 &1078481957
 GameObject:
@@ -1263,84 +1263,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1232839084
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2163099084458014630, guid: 62c68381d7e29274c8402d9b508fb7c9,
-        type: 3}
-      propertyPath: m_Name
-      value: Ballon
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638788985309514311, guid: 62c68381d7e29274c8402d9b508fb7c9,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638788985309514311, guid: 62c68381d7e29274c8402d9b508fb7c9,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.384
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638788985309514311, guid: 62c68381d7e29274c8402d9b508fb7c9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.487
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638788985309514311, guid: 62c68381d7e29274c8402d9b508fb7c9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638788985309514311, guid: 62c68381d7e29274c8402d9b508fb7c9,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638788985309514311, guid: 62c68381d7e29274c8402d9b508fb7c9,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638788985309514311, guid: 62c68381d7e29274c8402d9b508fb7c9,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638788985309514311, guid: 62c68381d7e29274c8402d9b508fb7c9,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638788985309514311, guid: 62c68381d7e29274c8402d9b508fb7c9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638788985309514311, guid: 62c68381d7e29274c8402d9b508fb7c9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638788985309514311, guid: 62c68381d7e29274c8402d9b508fb7c9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4380874490310385519, guid: 62c68381d7e29274c8402d9b508fb7c9,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 62c68381d7e29274c8402d9b508fb7c9, type: 3}
 --- !u!1001 &1246341438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1851,6 +1773,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1687258208667939081, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
+        type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 6246f072630ef514ca3be6451aae63b1,
+        type: 2}
     - target: {fileID: 3580337688849288725, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
       propertyPath: m_AnchorMax.y

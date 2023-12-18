@@ -284,10 +284,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.06357857
-    y: 0.06300485
-    width: 0.87193465
-    height: 0.87237483
+    x: 0.520436
+    y: 0.06785137
+    width: 0.29064488
+    height: 0.2907916
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -915,12 +915,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.13002351, y: 0.33451805}
-      - {x: -0.46191147, y: 0.32984814}
-      - {x: -0.46304053, y: -0.2810864}
-      - {x: 0.335104, y: -0.2711357}
-      - {x: 0.33699986, y: 0.12198809}
-      - {x: -0.12921521, y: 0.12950563}
+    - - {x: -0.13059646, y: 0.43460283}
+      - {x: -0.45930278, y: 0.5798195}
+      - {x: -0.46006522, y: -0.2741673}
+      - {x: 0.43980193, y: -0.23911615}
+      - {x: 0.39183307, y: 0.2634913}
+      - {x: 0.08444606, y: 0.5081434}
   m_UseDelaunayMesh: 0
 --- !u!1 &1078481957
 GameObject:
@@ -1575,6 +1575,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8420716746166599963, guid: ecd37d63997e6204d8f8df513cd9f91c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1669,7 +1674,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 887de82565de18f4fae611b8f0b6c67a,
+      objectReference: {fileID: 23800000, guid: c6c1a8bcc5f307c4d8e420d174846aee,
         type: 2}
     - target: {fileID: 1687258208667939081, guid: e1d365aa5b2a59f49baf9a7026dd19ab,
         type: 3}
