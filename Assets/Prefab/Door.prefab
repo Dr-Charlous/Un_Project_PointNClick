@@ -152,5 +152,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   Door: {fileID: 11400000, guid: d17dc499ab5e45a408e74c6069589932, type: 2}
-  SceneActiveObject: {fileID: 102900000, guid: 99c9720ab356a0642a771bea13969a05, type: 3}
+  SceneActiveObject: {fileID: 102900000, guid: d0d398a1c538e3e4f983fda15cb844d6, type: 3}
   SceneDestination: {fileID: 102900000, guid: 99c9720ab356a0642a771bea13969a05, type: 3}

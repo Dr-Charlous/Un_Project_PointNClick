@@ -29,9 +29,8 @@ public class PlayerMove : MonoBehaviour
     void MouseDownDestination()
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast((Vector2)mousePosition, Vector2.zero);
 
-        if (Input.GetMouseButtonUp(0)/* && hit.collider != null*/)
+        if (Input.GetMouseButtonUp(0))
         {
             followSpot = new Vector2(mousePosition.x, mousePosition.y);
         }

@@ -1174,8 +1174,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5500110549415070086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 24, y: 24, z: 24}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7204828726732587811}
@@ -1287,7 +1287,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5949420320217395575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.6, z: 0}
+  m_LocalPosition: {x: 0, y: -0.6, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1629,8 +1629,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   ObjectDragUi: {fileID: 6501830878675232903}
-  ValueDistanceObject: 3.5
-  ValueDistanceDoor: 7.5
+  ValueDistanceObject: 0.1
+  ValueDistanceDoor: 0.5
   Intensity: 1
   Duration: 4
   Animator: {fileID: 4424109241178688647}
@@ -1647,10 +1647,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: 0
-  Xpos: 0.1
-  XMpos: -0.1
-  Ypos: 0.1
-  YMpos: -0.1
+  Xpos: 0.5
+  Ypos: 0.5
   IsActive: 0
   ListIcones: {fileID: 11400000, guid: 2a89a6a9b35fdcc4585f6ca44bcb16c5, type: 2}
   IconeClicker: {fileID: 8379365743275571767}
