@@ -80,7 +80,7 @@ public class Inventory : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 
-            if (hit.collider != null && hit.collider.GetComponent<ObjectActionWithCollectable>() != null && hit.collider.GetComponent<ObjectActionWithCollectable>().doors.isOpen == true)
+            if (hit.collider != null && hit.collider.GetComponent<ObjectActionWithCollectable>() != null && hit.collider.GetComponent<ObjectActionWithCollectable>().doors != null && hit.collider.GetComponent<ObjectActionWithCollectable>().doors.isOpen == true)
             {
                 ChangeScene();
                 hit.collider.GetComponent<ObjectActionWithCollectable>().GoToScene(hit.collider.GetComponent<ObjectActionWithCollectable>().SceneDestination);
@@ -130,7 +130,7 @@ public class Inventory : MonoBehaviour
                 _objectUse = ObjectsInInventory[index];
                 _objectUseIndex = index;
 
-                if (hit.collider.GetComponent<ObjectActionWithCollectable>().Check(scriptableObject))
+                if (_doorUse.Check(scriptableObject, _doorUse.Door))
                 {
                     StartCoroutine(AffExpressions(Exclamation, 1));
                 }
@@ -180,14 +180,21 @@ public class Inventory : MonoBehaviour
 
     public void UseObjectPlayer(float value, CollectableUIScriptableObject scriptable, ObjectActionWithCollectable doorUse, int index)
     {
-        if (_objectUse != null && _doorUse != null && _objectUseIndex != -1)
+        if (_objectUse != null && _doorUse != null && _objectUseIndex != -1 && value != -1 && scriptable != null && doorUse != null && index != -1)
         {
             if (Vector3.Distance(PlayerMoveCode.gameObject.transform.position, doorUse.transform.position) < value)
             {
-                if (doorUse.Check(scriptable))
+                if (doorUse.Check(scriptable, doorUse.Door))
                 {
-                    ChangeScene();
-                    StartCoroutine(ChangeSceneWaiter(2, scriptable, doorUse, index));
+                    if (doorUse.doors != null)
+                    {
+                        ChangeScene();
+                        StartCoroutine(ChangeSceneWaiter(2, scriptable, doorUse, index));
+                    }
+                    else if (doorUse.objGive != null)
+                    {
+                        ChangeObj(scriptable, doorUse, index);
+                    }
                 }
             }
         }
@@ -203,6 +210,17 @@ public class Inventory : MonoBehaviour
         Animator.SetTrigger("Closing");
     }
 
+    public void ChangeObj(CollectableUIScriptableObject scriptable, ObjectActionWithCollectable doorUse, int index)
+    {
+        doorUse.ActionObj(scriptable, doorUse, index);
+
+        _doorUse = null;
+        _objectUse = null;
+        _objectUseIndex = -1;
+
+        StartCoroutine(Ui.ScreenShake(Intensity, Duration));
+    }
+
     public IEnumerator AffExpressions(GameObject obj, int time)
     {
         obj.SetActive(true);
@@ -214,6 +232,6 @@ public class Inventory : MonoBehaviour
     {
         InventoryS.ObjectsInInventoryS = ObjectsInInventory;
         yield return new WaitForSeconds(time);
-        doorUse.Action(scriptable, index);
+        doorUse.ActionDoor(scriptable, index);
     }
 }

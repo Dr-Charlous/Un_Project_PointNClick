@@ -12,31 +12,56 @@ public class Doors : ScriptableObject
 {
     public bool isOpen = false;
     public CollectableUIScriptableObject Door;
-    public SceneAsset SceneActiveObject;
     public SceneAsset SceneDestination;
+}
+
+[CreateAssetMenu(fileName = "ObjGive", menuName = "ScriptableObjects/ScriptableObjGive", order = 1)]
+public class ObjGive : ScriptableObject
+{
+    public bool isUsed = false;
+    public CollectableUIScriptableObject Door;
 }
 
 public class ObjectActionWithCollectable : MonoBehaviour
 {
     public Doors doors;
+    public ObjGive objGive;
+    public GameObject ObjHide;
+    [Header("Don't Touch")]
     public SceneAsset SceneDestination;
+    public CollectableUIScriptableObject Door;
 
-    private bool isOpen = false;
+    public bool isOpen = false;
+    public bool isUsed = false;
     public Inventory inventory;
-    private CollectableUIScriptableObject Door;
-    private SceneAsset SceneActiveObject;
 
     private void Start()
     {
-        isOpen = doors.isOpen;
-        Door = doors.Door;
-        SceneActiveObject = doors.SceneActiveObject;
-        SceneDestination = doors.SceneDestination;
+        if (doors != null)
+        {
+            isOpen = doors.isOpen;
+            Door = doors.Door;
+            SceneDestination = doors.SceneDestination;
+        }
+        if (objGive != null)
+        {
+            isUsed = objGive.isUsed;
+            Door = objGive.Door;
+        }
+
+        if (isOpen == true || isUsed == true)
+        {
+            if (ObjHide != null && ObjHide.GetComponent<Collectable>().ScrpitableObjectRefObjects.IsUsed == false)
+            {
+                Instantiate(ObjHide, transform.position, Quaternion.identity);
+            }
+            gameObject.SetActive(false);
+        }
     }
 
-    public bool Check(CollectableUIScriptableObject key)
+    public bool Check(CollectableUIScriptableObject key, CollectableUIScriptableObject door)
     {
-        if (key == Door && SceneManager.GetActiveScene().name == SceneActiveObject.name)
+        if (key != null && door != null && key == door)
         {
             return true;
         }
@@ -46,15 +71,31 @@ public class ObjectActionWithCollectable : MonoBehaviour
         }
     }
 
-    public void Action(CollectableUIScriptableObject key, int index)
+    public void ActionDoor(CollectableUIScriptableObject key, int index)
     {
-        if (key == Door && SceneManager.GetActiveScene().name == SceneActiveObject.name && isOpen == false)
+        if (key == Door && isOpen == false)
         {
             isOpen = true;
             doors.isOpen = isOpen;
+
             inventory.ObjectsInInventory[index] = null;
             inventory.Ui.AffObjectUi(inventory.ObjectsInInventory, inventory.Ui.Image, false);
+
             GoToScene(SceneDestination);
+        }
+    }
+
+    public void ActionObj(CollectableUIScriptableObject key, ObjectActionWithCollectable door, int index)
+    {
+        if (key == Door && isUsed == false)
+        {
+            isUsed = true;
+            objGive.isUsed = isUsed;
+
+            inventory.ObjectsInInventory[index] = null;
+            inventory.Ui.AffObjectUi(inventory.ObjectsInInventory, inventory.Ui.Image, false);
+
+            Instantiate(ObjHide, transform.position, Quaternion.identity);
         }
     }
 
@@ -63,5 +104,3 @@ public class ObjectActionWithCollectable : MonoBehaviour
         SceneManager.LoadScene(scene.name);
     }
 }
-
-

@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: Door1
-  m_EditorClassIdentifier: Assembly-CSharp::Doors
-  isOpen: 0
+  m_Name: ObjGive
+  m_EditorClassIdentifier: Assembly-CSharp::ObjGive
+  isUsed: 0
   Door: {fileID: 11400000, guid: d17dc499ab5e45a408e74c6069589932, type: 2}
-  SceneDestination: {fileID: 102900000, guid: d0d398a1c538e3e4f983fda15cb844d6, type: 3}
