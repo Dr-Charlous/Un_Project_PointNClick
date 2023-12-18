@@ -55,7 +55,7 @@ public class RythmGpe : MonoBehaviour
         {
             if (hit.collider.gameObject.GetComponent<ObjectActionWithCollectable>())
             {
-                StartCoroutine(RythmMiniGame());
+               // StartCoroutine(RythmMiniGame());
             }
         }
 
