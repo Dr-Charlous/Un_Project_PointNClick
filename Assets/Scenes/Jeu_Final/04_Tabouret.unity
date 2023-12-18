@@ -427,10 +427,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.06357857
-    y: 0.06300485
-    width: 0.87193465
-    height: 0.87237483
+    x: 0.520436
+    y: 0.06785137
+    width: 0.29064488
+    height: 0.2907916
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1660,6 +1660,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Framboise blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163099084458014630, guid: 887bd606de200c54fbf66c7df5f8fb1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3638788985309514311, guid: 887bd606de200c54fbf66c7df5f8fb1b,
         type: 3}
@@ -2892,6 +2897,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Framboise
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163099084458014630, guid: 994ae70a9e3ac8c4fa2c4ba5c2d0e375,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3638788985309514311, guid: 994ae70a9e3ac8c4fa2c4ba5c2d0e375,
         type: 3}

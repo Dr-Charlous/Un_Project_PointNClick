@@ -12,6 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Nimoul/Nimoul.unity
     guid: 335f6a1d6eb3361438690e58bc106667
   - enabled: 1
+    path: Assets/Scenes/Jeu_Final/01_Rue.unity
+    guid: 5f84543f08969314c84b0145a60b25e0
+  - enabled: 1
+    path: Assets/Scenes/Jeu_Final/02_Porte.unity
+    guid: 99e53b4a84c9fc948a98677d2b0de1eb
+  - enabled: 1
     path: Assets/Scenes/Jeu_Final/03_Bar.unity
     guid: d0d398a1c538e3e4f983fda15cb844d6
+  - enabled: 1
+    path: Assets/Scenes/Jeu_Final/04_Tabouret.unity
+    guid: 2ff53d6cceb86e147aa5283ee18ef808
+  - enabled: 1
+    path: Assets/Scenes/Jeu_Final/Main_Menu.unity
+    guid: 90e8da77660cae44eb45589a40cc3400
   m_configObjects: {}

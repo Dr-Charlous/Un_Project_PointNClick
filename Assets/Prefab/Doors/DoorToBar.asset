@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: DoorRue
+  m_Name: DoorToBar
   m_EditorClassIdentifier: Assembly-CSharp::Doors
   isOpen: 1
-  Door: {fileID: 11400000, guid: 0b0cf780f01a04947950732d3621328a, type: 2}
-  SceneDestination: {fileID: 102900000, guid: 99e53b4a84c9fc948a98677d2b0de1eb, type: 3}
+  Door: {fileID: 11400000, guid: a6175f4fcb02e0c4d945bf028e0e0a7c, type: 2}
+  SceneDestination: {fileID: 102900000, guid: d0d398a1c538e3e4f983fda15cb844d6, type: 3}
