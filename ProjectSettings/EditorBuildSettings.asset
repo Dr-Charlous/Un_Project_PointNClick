@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DevScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
-    path: Assets/Scenes/Nimoul.unity
+    path: Assets/Scenes/Nimoul/Nimoul.unity
     guid: 335f6a1d6eb3361438690e58bc106667
   - enabled: 1
-    path: Assets/Scenes/Importation_assets.unity
+    path: Assets/Scenes/Jeu_Final/03_Bar.unity
     guid: d0d398a1c538e3e4f983fda15cb844d6
   m_configObjects: {}

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cc5cce383a4c44347aadefb79c0cf5d4
+guid: 3fa19137196477c4abf105681d3b3b65
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,76 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Porte_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 180
-        width: 320
-        height: 180
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: edd7b9da865565a4b801146137c9beef
-      internalID: -730842678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Porte_1
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 180
-        width: 320
-        height: 180
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82dc325ba4cf20b41b51766eb60f2468
-      internalID: -1358902268
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Porte_2
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 180
-        width: 320
-        height: 180
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d02d160c6f9ec5549959583db5baa6ea
-      internalID: -1119279975
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Porte_3
+      name: bougied_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 180
+        width: 7
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fea0fa6428303ae43afbd1ddd6fe35c7
-      internalID: -153024933
+      spriteID: e2660db8711005440a8ccc597fd43349
+      internalID: -1013553922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Porte_4
+      name: bougied_1
       rect:
         serializedVersion: 2
-        x: 320
+        x: 7
         y: 0
-        width: 320
-        height: 180
+        width: 7
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cea2579a13bb0f43911c13a258da267
-      internalID: -1402859422
+      spriteID: 78c82d24073308c46836b630c63d4227
+      internalID: 1926528505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Porte_5
+      name: bougied_2
       rect:
         serializedVersion: 2
-        x: 640
+        x: 14
         y: 0
-        width: 320
-        height: 180
+        width: 7
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +179,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: feae6f8969ff24b4f86fd1f7b1b72370
-      internalID: -2115515715
+      spriteID: 2f863c0890e91064e9ddb34d8413c36d
+      internalID: 2142093805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bougied_3
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46dd2e3077983f641b0bd4ddfc03b886
+      internalID: -679346831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bougied_4
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9717e8f112827744c8418a6a228ccb2c
+      internalID: -292800774
       vertices: []
       indices: 
       edges: []
@@ -251,7 +230,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2bb99abb9c11e544b8e68745f983c6ea
+    spriteID: d9f5c5bb29513a0419a381cb301629f5
     internalID: 0
     vertices: []
     indices: 
@@ -259,12 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Porte_0: -730842678
-      Porte_1: -1358902268
-      Porte_2: -1119279975
-      Porte_3: -153024933
-      Porte_4: -1402859422
-      Porte_5: -2115515715
+      bougied_0: -1013553922
+      bougied_1: 1926528505
+      bougied_2: 2142093805
+      bougied_3: -679346831
+      bougied_4: -292800774
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
